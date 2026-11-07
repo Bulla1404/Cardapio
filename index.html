@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#4e0c14">
+  <meta name="description" content="Cardápio digital da Pimenta Roza: salgadinhos fritos, assados, assadinhos e tortas sob consulta. Monte sua encomenda e envie pelo WhatsApp.">
+  <title>Pimenta Roza | Salgados e Tortas</title>
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="faixa-topo">🌹 Feito com amor em cada detalhe!</div>
+
+  <header class="cabecalho" id="inicio">
+    <div class="container cabecalho-interno">
+      <a class="marca" href="#inicio" aria-label="Pimenta Roza, voltar ao início">
+        <img src="logo.png" alt="" width="67" height="67">
+        <span><strong>Pimenta Roza</strong><small>Salgados e tortas</small></span>
+      </a>
+      <nav class="menu" aria-label="Menu principal">
+        <a href="#cardapio">Cardápio</a>
+        <a href="#tortas">Tortas</a>
+        <button type="button" id="btn-carrinho-topo" class="btn-carrinho-topo">🛒 Carrinho <span id="contagem-carrinho" class="bolha">0</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-interno">
+        <div class="hero-texto">
+          <span class="mini-titulo">SABOR QUE ENCANTA</span>
+          <h1>Momentos especiais merecem <em>sabores especiais.</em></h1>
+          <p>Escolha meio cento ou cento inteiro de salgadinhos, marque os sabores que prefere ou peça sortido. Simples e prático!</p>
+          <div class="hero-acoes">
+            <a class="botao botao-dourado" href="#cardapio">Ver cardápio <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="circulo-decorativo"></div>
+          <img src="logo.png" alt="Logotipo Pimenta Roza: salgados e tortas" class="logo-grande" width="370" height="370">
+          <span class="selo-hero">Qualidade que você sente!</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="vantagens" aria-label="Destaques">
+      <div class="container vantagens-interno">
+        <span>♡ Feito com amor</span>
+        <span>✦ Receitas especiais</span>
+        <span>✓ Encomenda pelo WhatsApp</span>
+      </div>
+    </section>
+
+    <section class="secao-cardapio container" id="cardapio">
+      <div class="cabecalho-secao">
+        <span class="mini-titulo mini-titulo-escuro">NOSSO CARDÁPIO</span>
+        <h2>Escolha os seus <em>favoritos</em></h2>
+        <p>Escolha entre 50 ou 100 unidades e marque os sabores desejados, sem precisar definir quantas unidades vão de cada sabor.</p>
+      </div>
+
+      <div class="aviso-preco" role="note">
+        <span aria-hidden="true">ⓘ</span>
+        <p><strong>Valores por cento (100 unidades):</strong> fritos R$ 55,00, assados R$ 70,00 e assadinhos R$ 90,00. <strong>Meio cento</strong> tem 50 unidades; os valores exibidos para meio cento são calculados como metade do preço do cento e precisam ser confirmados pela loja.</p>
+      </div>
+
+      <div id="grade-categorias" class="grade-categorias" aria-label="Categorias de salgados"></div>
+    </section>
+
+    <section class="secao-tortas" id="tortas">
+      <div class="container tortas-interno">
+        <div>
+          <span class="mini-titulo">OUTRAS DELÍCIAS</span>
+          <h2>Também temos <em>tortas!</em></h2>
+          <p>A marca anuncia tortas, mas o cardápio enviado não especifica sabores, tamanhos ou preços. Consulte a loja para conhecer as opções.</p>
+          <a id="link-consultar-tortas" class="botao botao-dourado" href="https://wa.me/5532999528648?text=Ol%C3%A1%21%20Quais%20tortas%2C%20sabores%2C%20tamanhos%20e%20pre%C3%A7os%20voc%C3%AAs%20t%C3%AAm%3F" target="_blank" rel="noopener noreferrer">Consultar tortas pelo WhatsApp</a>
+        </div>
+        <div class="torta-detalhe" aria-hidden="true">🥧</div>
+      </div>
+    </section>
+
+    <section class="duvidas container">
+      <span class="mini-titulo mini-titulo-escuro">FALE COM A GENTE</span>
+      <h2>Vamos preparar sua encomenda?</h2>
+      <p>Monte seu pedido no site e envie sua escolha de tamanho e sabores para a Pimenta Roza. A loja confirma os valores e a disponibilidade.</p>
+      <a class="link-contato" href="https://wa.me/5532999528648" target="_blank" rel="noopener noreferrer">WhatsApp: (32) 99952-8648</a>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container rodape-interno">
+      <span><strong>Pimenta Roza</strong> · Salgados e tortas</span>
+      <span>Feito com amor em cada detalhe 🌹</span>
+    </div>
+  </footer>
+
+  <div id="barra-carrinho" class="barra-carrinho" hidden>
+    <div class="barra-carrinho-resumo">
+      <strong id="resumo-carrinho">0 itens no pedido</strong>
+      <small id="preco-barra-carrinho">Total estimado: R$ 0,00</small>
+    </div>
+    <button id="btn-abrir-carrinho" type="button" class="botao botao-verde">Ver carrinho <span aria-hidden="true">→</span></button>
+  </div>
+
+  <dialog id="modal-pedido" class="janela-modal" aria-labelledby="titulo-modal-pedido">
+    <div class="modal-cabecalho">
+      <div>
+        <span class="mini-titulo mini-titulo-escuro">MONTE SEU PEDIDO</span>
+        <h2 id="titulo-modal-pedido">Salgadinhos</h2>
+        <p id="preco-modal-pedido"></p>
+      </div>
+      <button type="button" id="fechar-modal-pedido" class="fechar-modal" aria-label="Fechar">×</button>
+    </div>
+    <div class="modal-corpo">
+      <fieldset class="campo-tamanho">
+        <legend>Escolha o tamanho da encomenda</legend>
+        <div class="opcoes-tamanho">
+          <label class="opcao-tamanho">
+            <input type="radio" name="tamanho-pedido" value="50">
+            <span><strong>Meio cento</strong><small>50 salgadinhos</small><b id="preco-meio-cento">R$ 0,00*</b></span>
+          </label>
+          <label class="opcao-tamanho">
+            <input type="radio" name="tamanho-pedido" value="100" checked>
+            <span><strong>Cento inteiro</strong><small>100 salgadinhos</small><b id="preco-cento-inteiro">R$ 0,00</b></span>
+          </label>
+        </div>
+        <small class="nota-tamanho">*O preço do meio cento é calculado como metade do cento e será confirmado pela loja.</small>
+      </fieldset>
+      <fieldset class="campo-sabores">
+        <legend>Quais sabores você quer?</legend>
+        <p class="instrucoes-modal">Marque um ou mais sabores ou escolha <strong>Sortido</strong> para receber uma mistura de todos os sabores desta categoria. A distribuição fica por conta da loja.</p>
+        <div id="lista-sabores-modal" class="lista-sabores-modal"></div>
+      </fieldset>
+      <label class="rotulo-observacao" for="observacao-pedido">Observações <small>(opcional)</small></label>
+      <textarea id="observacao-pedido" rows="3" maxlength="400" placeholder="Ex.: dividir igualmente os sabores; tirar algum ingrediente..."></textarea>
+    </div>
+    <div class="modal-rodape">
+      <span id="total-unidades-modal" aria-live="polite">100 unidades · R$ 0,00</span>
+      <button id="adicionar-pedido" class="botao botao-dourado" type="button" disabled>Adicionar ao carrinho</button>
+    </div>
+  </dialog>
+
+  <dialog id="modal-carrinho" class="janela-modal" aria-labelledby="titulo-carrinho">
+    <div class="modal-cabecalho">
+      <div>
+        <span class="mini-titulo mini-titulo-escuro">RESUMO DA ENCOMENDA</span>
+        <h2 id="titulo-carrinho">Seu carrinho</h2>
+      </div>
+      <button type="button" id="fechar-modal-carrinho" class="fechar-modal" aria-label="Fechar">×</button>
+    </div>
+    <div class="modal-corpo">
+      <div id="lista-carrinho" class="lista-carrinho"></div>
+
+      <section class="mais-produtos" aria-labelledby="titulo-mais-produtos">
+        <h3 id="titulo-mais-produtos">＋ Adicionar mais produtos</h3>
+        <p>Quer mais um meio cento ou cento inteiro? Escolha a categoria abaixo. O que já está no carrinho continuará salvo.</p>
+        <div id="opcoes-mais-produtos" class="opcoes-mais-produtos" aria-label="Escolha outra categoria"></div>
+      </section>
+
+      <div class="campos-cliente">
+        <p class="instrucao-dados-cliente">Preencha os dados abaixo para enviar sua encomenda. <strong>* Campos obrigatórios</strong></p>
+        <label for="nome-cliente">Seu nome <span class="marcador-obrigatorio" aria-hidden="true">*</span></label>
+        <input id="nome-cliente" type="text" maxlength="80" placeholder="Como podemos chamar você?" autocomplete="name" required>
+        <div class="grade-data-horario">
+          <div>
+            <label for="data-pedido">Data da encomenda <span class="marcador-obrigatorio" aria-hidden="true">*</span></label>
+            <input id="data-pedido" type="date" required>
+          </div>
+          <div>
+            <label for="horario-pedido">Horário desejado <span class="marcador-obrigatorio" aria-hidden="true">*</span></label>
+            <input id="horario-pedido" type="time" required>
+          </div>
+        </div>
+        <label for="detalhes-cliente">Informações sobre entrega <small>(opcional)</small></label>
+        <textarea id="detalhes-cliente" rows="3" maxlength="500" placeholder="Ex.: gostaria de saber se fazem entrega ou se preciso retirar no local."></textarea>
+        <p id="aviso-campos-obrigatorios" class="aviso-campos-obrigatorios" role="alert" hidden>Preencha seu nome, a data e o horário desejado para enviar o pedido.</p>
+      </div>
+      <p class="aviso-no-carrinho">Os valores são estimados: o meio cento foi calculado como metade do cento. A encomenda e o preço final dependem da confirmação da loja pelo WhatsApp.</p>
+    </div>
+    <div class="modal-rodape modal-rodape-carrinho">
+      <span id="contador-resumo-carrinho">Total estimado: R$ 0,00</span>
+      <button type="button" id="finalizar-pedido" class="botao botao-verde">Enviar pelo WhatsApp</button>
+    </div>
+  </dialog>
+</body>
+</html>
